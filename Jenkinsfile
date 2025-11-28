@@ -69,7 +69,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 echo "📊 Étape 5/6 - Vérification Quality Gate..."
-                timeout(time: 10, unit: 'MINUTES') {
+                timeout(time: 18, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: false
                 }
                 sh 'echo "✅ Quality Gate passée - Code conforme aux standards"'
