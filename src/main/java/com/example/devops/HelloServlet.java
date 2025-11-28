@@ -8,24 +8,23 @@ import jakarta.servlet.annotation.*;
 public class HelloServlet extends HttpServlet {
     private String message;
 
-    @Override  // ← AJOUTER
+    @Override
     public void init() {
         message = "Hello World!";
     }
 
-    @Override  // ← AJOUTER
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
+        out.println("<html lang=\"fr\"><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }
 
-    @Override  // ← AJOUTER
+    @Override
     public void destroy() {
-        // ← AJOUTER UN COMMENTAIRE EXPLICATIF
         // Cette méthode est vide car aucune ressource à libérer
-        // La méthode est override pour documentation
+        // La méthode est override pour documentation et conformité
     }
 }
