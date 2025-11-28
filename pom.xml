@@ -13,12 +13,13 @@
     <name>DevOps Application</name>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.source>21</maven.compiler.target>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.0</junit.version>
         <mockito.version>5.8.0</mockito.version>
         <jacoco.version>0.8.10</jacoco.version>
+        <maven.war.plugin.version>3.3.2</maven.war.plugin.version>
     </properties>
 
     <dependencies>
@@ -70,6 +71,13 @@
                     <source>21</source>
                     <target>21</target>
                 </configuration>
+            </plugin>
+
+            <!-- WAR Plugin compatible Java 21 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven.war.plugin.version}</version>
             </plugin>
 
             <!-- Surefire Plugin for Tests -->
