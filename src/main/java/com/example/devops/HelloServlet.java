@@ -1,7 +1,6 @@
 package com.example.devops;
 
 import java.io.*;
-
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -9,20 +8,24 @@ import jakarta.servlet.annotation.*;
 public class HelloServlet extends HttpServlet {
     private String message;
 
+    @Override  // ← AJOUTER
     public void init() {
-        message = "Hello World from DevOps App - Updated v2!";
+        message = "Hello World!";
     }
 
+    @Override  // ← AJOUTER
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
-        // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }
 
+    @Override  // ← AJOUTER
     public void destroy() {
+        // ← AJOUTER UN COMMENTAIRE EXPLICATIF
+        // Cette méthode est vide car aucune ressource à libérer
+        // La méthode est override pour documentation
     }
 }
