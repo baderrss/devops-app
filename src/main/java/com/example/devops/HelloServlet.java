@@ -10,7 +10,7 @@ public class HelloServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello World from DevOps App - Updated!";
+        message = "Hello World from DevOps App - Updated v2!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
